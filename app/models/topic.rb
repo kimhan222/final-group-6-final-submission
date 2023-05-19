@@ -1,3 +1,4 @@
 class Topic < ApplicationRecord
-  belongs_to :subject
+  bolongs_to :subject
+  validates_presence_of :name
 end
