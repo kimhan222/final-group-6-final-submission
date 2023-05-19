@@ -1,0 +1,39 @@
+
+
+
+<div class="container mx-auto px-4">
+  <div class="flex items-center justify-between flex-wrap mb-6">
+    <h1 class="text-3xl font-bold">Topics</h1>
+
+    <%= link_to new_topic_path, class: button_class(theme: "primary") do %>
+    Add New Topic
+    <% end %>
+  </div>
+
+  <table class="table-auto border-collapse border-slate-400 w-full">
+    <thead class="bg-slate-50 dark:bg-slate-700">
+      <tr>
+        
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Name</th>
+        
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Subject</th>
+                
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @topics.each do |topic| %>
+      <%= content_tag :tr, id: dom_id(topic), class: dom_class(topic) do %>
+      
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= link_to topic.name, topic %></td>
+      
+
+              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= topic.subject %></td>
+      
+      
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
