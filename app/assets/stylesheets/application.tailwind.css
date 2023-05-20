@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import 'actiontext.css';
+.background {
+	background-color: brow;
+}
